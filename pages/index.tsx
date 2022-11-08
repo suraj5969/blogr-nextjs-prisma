@@ -19,7 +19,6 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-
 type Props = {
   feed: PostProps[],
 }

@@ -25,6 +25,9 @@ type Props = {
 }
 
 const Blog: React.FC<Props> = (props) => {
+
+  console.log(process.env.SECRET);
+
   return (
     <Layout>
       <div className="page">

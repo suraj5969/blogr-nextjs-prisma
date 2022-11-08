@@ -14,19 +14,21 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   });
   return {
-    props: { feed },
+    props: { feed, secret: process.env.SECRET },
     revalidate: 10,
   };
 };
 
 
 type Props = {
-  feed: PostProps[]
+  feed: PostProps[],
+  secret: string
 }
 
 const Blog: React.FC<Props> = (props) => {
 
-  console.log(process.env.SECRET);
+  console.log(process.env.SECRET, "proocess.env.SECRET");
+  console.log(props.secret, "props.secret");
 
   return (
     <Layout>

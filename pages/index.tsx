@@ -14,16 +14,22 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   });
   return {
-    props: { feed},
+    props: { feed, secret: process.env.NEXTAUTH_URL },
     revalidate: 10,
   };
 };
 
+
 type Props = {
   feed: PostProps[],
+  secret: string
 }
 
 const Blog: React.FC<Props> = (props) => {
+
+  console.log(process.env.NEXTAUTH_URL, "proocess.env.SECRET");
+  console.log(props.secret, "props.secret");
+
   return (
     <Layout>
       <div className="page">

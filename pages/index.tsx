@@ -14,7 +14,7 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   });
   return {
-    props: { feed, secret: process.env.SECRET },
+    props: { feed},
     revalidate: 10,
   };
 };
@@ -22,14 +22,9 @@ export const getStaticProps: GetStaticProps = async () => {
 
 type Props = {
   feed: PostProps[],
-  secret: string
 }
 
 const Blog: React.FC<Props> = (props) => {
-
-  console.log(process.env.SECRET, "proocess.env.SECRET");
-  console.log(props.secret, "props.secret");
-
   return (
     <Layout>
       <div className="page">

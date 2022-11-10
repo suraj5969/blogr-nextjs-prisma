@@ -27,8 +27,8 @@ type Props = {
 
 const Blog: React.FC<Props> = (props) => {
 
-  console.log(process.env.NEXTAUTH_URL, "proocess.env.SECRET");
-  console.log(props.secret, "props.secret");
+  // console.log(process.env.NEXTAUTH_URL, "proocess.env.SECRET");
+  // console.log(props.secret, "props.secret");
 
   return (
     <Layout>

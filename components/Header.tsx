@@ -10,6 +10,7 @@ const Header: React.FC = () => {
     router.pathname === pathname;
 
   const { data: session, status } = useSession();
+  console.log(session, "session froenend");
 
   let left = (
     <div className="left">

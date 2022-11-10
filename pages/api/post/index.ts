@@ -1,7 +1,6 @@
-    
-
-import { getSession } from 'next-auth/react';
-import prisma from '../../../lib/prisma';
+import { authOptions } from "../auth/[...nextauth]";
+import { unstable_getServerSession } from "next-auth/next";
+import prisma from "../../../lib/prisma";
 
 // POST /api/post
 // Required fields in body: title
@@ -9,7 +8,8 @@ import prisma from '../../../lib/prisma';
 export default async function handle(req, res) {
   const { title, content } = req.body;
 
-  const session = await getSession({ req });
+  const session = await unstable_getServerSession(req, res, authOptions );
+  console.log(session?.user?.email, 'session?.user?.email');
   const result = await prisma.post.create({
     data: {
       title: title,
